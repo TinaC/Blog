@@ -79,22 +79,14 @@ var myFunc = makeFunc();
 myFunc(); // 仍然包含对原始词法作用域的引用
 ```
 
-之前我将作用域链和调用栈混淆了，看着两个例子：
-
-* 作用域链看函数声明，author time
-global scope -> foo
-global scope -> bar
-
-* 调用栈看函数调用，run time
-global -> bar -> foo
-
-![scope & call stack](/assets/article_images/2018/scope.jpg)
+之前我将作用域链和调用栈混淆了，看这几个例子：
 
 ## 例子1
 
 ```js
 function foo() {
 	console.log( a ); // 2
+  console.log( this.a ); // 2, 但this和词法作用域机制不一样，见例子3
 }
 
 function bar() {
@@ -106,6 +98,16 @@ var a = 2;
 
 bar();
 ```
+
+![scope & call stack](/assets/article_images/2018/scope.jpg)
+
+* 作用域链看函数声明，author time
+global scope -> foo
+global scope -> bar
+
+* 调用栈看函数调用，run time
+global -> bar -> foo
+
 
 ## 例子2
 
@@ -123,9 +125,13 @@ var a = 2;
 bar();
 ```
 
-## 例子3
+* 作用域链
+global -> bar -> foo
 
-![scope & call stack](/assets/article_images/2018/scope&this.jpg)
+* 调用栈
+global -> bar -> foo
+
+## 例子3
 
 ```js
 {
@@ -133,17 +139,29 @@ bar();
     var a = 4;
     return function foo() {
       console.log( a ); // 4
+      console.log( this.a ); // 2, this是window
     }
   }
 
   function bar() {
     var a = 3;
-    baz()()
+    baz()();
   }
 
   var a = 2;
-    bar();
+  bar();
 }
 ```
 
-由上可知，闭包保存了整个声明该函数时的词法环境，所以如果使用没有必要的函数嵌套，创建多余的闭包，会造成性能问题。
+![scope & call stack](/assets/article_images/2018/scope&this.jpg)
+
+* 作用域链
+global -> bar
+global -> baz -> foo
+
+* 调用栈
+global -> bar -> baz() -> foo()
+
+---
+
+闭包保存了整个声明该函数时的词法环境，所以如果使用没有必要的函数嵌套，创建多余的闭包，影响垃圾回收，会造成性能问题。
