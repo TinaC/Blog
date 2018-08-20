@@ -75,7 +75,7 @@ myFunc(); // 仍然包含对原始词法作用域的引用
 * 作用域链看函数声明，author time
 global scope -> foo
 global scope -> bar
-[此处有截图]
+![scope & call stack](/assets/article_images/2018/scope.jpg)
 
 * 调用栈看函数调用，run time
 global -> bar -> foo
