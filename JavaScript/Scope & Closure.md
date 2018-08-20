@@ -10,8 +10,10 @@ https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch
 
 [从JS垃圾回收机制和词源来透视闭包](https://mp.weixin.qq.com/s/485GgpEt2c7uS-mY1cbA3w)
 
-闭包是函数和声明该函数时的词法环境的结合
+闭包是函数和声明该函数时的词法环境的结合。
+
 词法环境包含了这个闭包创建时所能访问的所有局部变量。
+
 closure = function + it's lexical environment(local variables)
 
 所以要理解闭包，首先要理解词法作用域； 要理解词法作用域，首先要理解作用域。
@@ -21,7 +23,7 @@ closure = function + it's lexical environment(local variables)
 作用域是根据名称查找变量值的一套规则，[用途](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md)：
 1. 隐藏内部实现
 2. 规避冲突
-是一种函数封装方式(?)。
+是一种函数封装方式(?)
 
 [作用域可以粗略地分为三类](https://codeburst.io/js-scope-static-dynamic-and-runtime-augmented-5abfee6223fe)：
 1. 静态作用域 (Static scope) / 词法作用域 (Lexical scope)
@@ -40,10 +42,10 @@ with, eval 影响代码优化(因为编译器无法预知)，尽量少用
 作用域链的查找规则：
 1. 引擎从当前的执行作用域开始查找变量
 2. 如果找不到，就向上一级继续查找
-3. 直到抵达最外层的全局作用域。
-4. 如果没找到，严格模式下报错(ReferenceError: x is not defined), 非严格模式下创建一个变量？
+3. 直到抵达最外层的全局作用域
+4. 如果没找到，严格模式下报错(ReferenceError: x is not defined), 非严格模式下创建一个变量(?)
 
-MDN中lexical scope的例子, 函数嵌套组成了作用域链：
+MDN中Lexical scope的例子, 函数嵌套组成了作用域链：
 
 ```js
 function init() {
@@ -59,7 +61,9 @@ init();
 # 闭包 (Closure)
 
 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。
+
 无论使用何种手段将内部函数传递到所在的词法作用域外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。
+
 严格来说，要在它本身的词法作用域外执行的函数才叫闭包。否则就是用的词法作用域，而不是闭包。
 
 ```js
@@ -80,12 +84,13 @@ myFunc(); // 仍然包含对原始词法作用域的引用
 * 作用域链看函数声明，author time
 global scope -> foo
 global scope -> bar
-![scope & call stack](/assets/article_images/2018/scope.jpg)
 
 * 调用栈看函数调用，run time
 global -> bar -> foo
 
+![scope & call stack](/assets/article_images/2018/scope.jpg)
 
+## 例子1
 
 ```js
 function foo() {
@@ -102,6 +107,8 @@ var a = 2;
 bar();
 ```
 
+## 例子2
+
 ```js
 function bar() {
   var a = 3;
@@ -114,6 +121,29 @@ function bar() {
 var a = 2;
 
 bar();
+```
+
+## 例子3
+
+![scope & call stack](/assets/article_images/2018/scope&this.jpg)
+
+```js
+{
+  function baz() {
+    var a = 4;
+    return function foo() {
+      console.log( a ); // 4
+    }
+  }
+
+  function bar() {
+    var a = 3;
+    baz()()
+  }
+
+  var a = 2;
+    bar();
+}
 ```
 
 由上可知，闭包保存了整个声明该函数时的词法环境，所以如果使用没有必要的函数嵌套，创建多余的闭包，会造成性能问题。
