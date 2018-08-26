@@ -13,8 +13,8 @@ CSS Specificity 就是我们通常理解的CSS选择器优先级/权重。通常
 
 CSS Specificity由四个部分组成，如0，0，0，0.计算规则如下：
 
-1. 每多一个html内部的内联样式，加1，0，0，0
-2. 每多一个id选择器，加0，1，0，0  
+1. 每多一个html内部的内联样式inline styles，加1，0，0，0
+2. 每多一个id选择器#，加0，1，0，0  
 3. 每多一个类选择器，属性选择器或伪类选择器，加0，0，1，0
 4. 每多一个元素选择器，伪元素选择器，加0，0，0，1
 5. 每多一个通配选择符（*），加0，0，0，0 
@@ -29,12 +29,11 @@ CSS Specificity由四个部分组成，如0，0，0，0.计算规则如下：
 ( 图片来自<http://specificity.keegan.st> )
 
 例子：
-{% highlight css %}
+```css
 *.bright {color:yellow;} /* 0,0,1,0*/
 div#sidebar *[href] {color:silver;} /*0,1,1,0*/
 html > body table tr[id="totals"] td ul > li {color: maroon;} /*0,0,1,7*/
-
-{% endhighlight %}
+```
 
 有些网站这样描述CSS优先级：
 

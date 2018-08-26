@@ -35,7 +35,9 @@ obj.foo(); // 2
 * 3.1 hard binding: call() apply() bind()
 
 > function.call(thisArg, arg1, arg2, ...)
+
 > function.apply(thisArg, [argsArray])
+
 > function.bind(thisArg[, arg1[, arg2[, ...]]])
 
 https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind
@@ -57,6 +59,7 @@ Function.prototype.bind = function(ctx) {
 * 3.2 API Call "Contexts"
 
 提供了可选的this参数，原理和hard binding一样
+
 `forEach(function, this)`
 
 * 4. `new` binding
@@ -116,7 +119,7 @@ var baz = new bar(3); // new binding
 console.log(baz.a) // 3 : new binding wins
 ```
 
-![this_binding](/assets/article_images/2018/this_binding.jpg) 
+![this_binding](/assets/article_images/2018/this_binding.png) 
 
 # jQuery $.proxy()
 
