@@ -31,7 +31,7 @@ closure = function + it's lexical environment(local variables)
 author time，即通过源代码就能判断scope，取决于函数何处声明，与作用域链(lexical scope chain)相关
 
 2. 动态作用域 (Dynamic scope)
-利用调用栈来动态定义作用域，参考JS中的this值获取(ES6中的箭头函数就用的静态作用域)
+利用调用栈来动态定义作用域，参考JS中的this值获取(ES6中的箭头函数就用的静态作用域, 使用`var that = this`的技巧也是用静态作用于替代动态作用域的例子)
 run time，取决于函数被何处调用，与调用栈(call stack)相关
 
 3. 运行时变化(?)作用域 (Runtime-augmented scope)
