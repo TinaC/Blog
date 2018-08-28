@@ -27,6 +27,8 @@ margin & padding只有水平方向的生效， width & height不生效，但是�
 ## inline block
 
 和inline的区别在于可以设置width & height & margin & padding了
+> An inline-block element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element.
+https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
 
 ## block
 
