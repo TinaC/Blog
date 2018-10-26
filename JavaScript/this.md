@@ -10,7 +10,7 @@
 
 * 2. 隐式绑定
 
-使用对象上下文去引用函数时，可以说在这个函数被调用时，这个对象包含了这个函数引用，这时隐式绑定规则就认为这个对象应该作为该方法的`this` binding. 
+使用对象上下文去引用函数时，可以说在这个函数被调用时，这个对象包含了这个函数引用，这时隐式绑定规则就认为这个对象应该作为该方法的`this` binding.
 
 ```js
 function foo() {
@@ -95,7 +95,7 @@ obj1.foo( 2 );
 console.log( obj1.a ); // 2
 
 obj1.foo.call( obj2, 3 ); // hard binding
-console.log( obj2.a ); // 3, hard binding wins 
+console.log( obj2.a ); // 3, hard binding wins
 
 var bar = new obj1.foo( 4 );
 console.log( obj1.a ); // 2
@@ -119,7 +119,7 @@ var baz = new bar(3); // new binding
 console.log(baz.a) // 3 : new binding wins
 ```
 
-![this_binding](/assets/article_images/2018/this_binding.png) 
+![this_binding](/assets/article_images/2018/this_binding.png)
 
 # jQuery $.proxy()
 
