@@ -1,19 +1,6 @@
-参考资料:
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
-
-https://codeburst.io/js-scope-static-dynamic-and-runtime-augmented-5abfee6223fe
-
-https://css-tricks.com/javascript-scope-closures/
-
-https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md
-
-[从JS垃圾回收机制和词源来透视闭包](https://mp.weixin.qq.com/s/485GgpEt2c7uS-mY1cbA3w)
-
-闭包是函数和声明该函数时的词法环境的结合。
-
+> 闭包是函数和声明该函数时的词法环境的结合。
 词法环境包含了这个闭包创建时所能访问的所有局部变量。
-
 closure = function + it's lexical environment(local variables)
 
 所以要理解闭包，首先要理解词法作用域； 要理解词法作用域，首先要理解作用域。
@@ -165,3 +152,12 @@ global -> bar -> baz() -> foo()
 ---
 
 闭包保存了整个声明该函数时的词法环境，所以如果使用没有必要的函数嵌套，创建多余的闭包，影响垃圾回收，会造成性能问题。
+
+
+## 参考资料:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+https://codeburst.io/js-scope-static-dynamic-and-runtime-augmented-5abfee6223fe
+https://css-tricks.com/javascript-scope-closures/
+https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md
+[从JS垃圾回收机制和词源来透视闭包](https://mp.weixin.qq.com/s/485GgpEt2c7uS-mY1cbA3w)
