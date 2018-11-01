@@ -9,3 +9,5 @@
 [What is the difference between function declaration and function expression]()
 
 [Explain why the following doesn't work as an IIFE: `function foo(){ }();`]()
+
+[DOM_API cheat sheet]
