@@ -23,9 +23,27 @@ event.eventPhase可以获取当前阶段：
 
 ## event.target
 
-当事件发生时，最深嵌套(the most nested)的元素被标记为目标元素(target element). 可以通过event.target获取。
-目标元素在冒泡/捕获过程不会变化。
-但是handler的this会变化，是当前handler注册的元素。
+> The most deeply nested element that caused the event is called **a target element**, accessible as `event.target`.
+Note the differences from `this` (=`event.currentTarget`):
+`event.target` – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
+点击的最深嵌套(the most nested)的元素, 子元素, 点击到不同的子元素，`event target`不同
+`this` – is the “current” element, the one that has a currently running handler on it.
+
+target element在**冒泡/捕获过程**不会变化, 始终是子元素，但是handler的this会变化，是当前触发的handler注册的元素。
+`this` 在同一个handler被不同子元素触发时不会变化。
+
+对于 form -> div -> p 的层级结构, [Code](https://github.com/TinaC/FE_Notes/blob/master/js/event/propagation.html)，
+如果点击最内层的p, 事件的响应顺序(冒泡)以及属性：
+p onclick: event.target = P, this = P, event.currentTarget = P
+div onclick: event.target = P, this = DIV, event.currentTarget = DIV
+form onclick: event.target = P, this = FORM, event.currentTarget = FORM
+
+点击div:
+div onclick: event.target = DIV, this = DIV, event.currentTarget = DIV
+form onclick: event.target = DIV, this = FORM, event.currentTarget = FORM
+
+点击Form:
+form onclick: event.target = FORM, this = FORM, event.currentTarget = FORM
 
 ## event.stopPropagation()
 
@@ -41,7 +59,7 @@ event.stopImmediatePropagation() 可以阻止所有别的handler执行
 
 点击最里层的“bubble”元素，触发的事件顺序：
 
-![event_bubble_example](/assets/article_images/2018/event_bubble_example.jpg) 
+![event_bubble_example](/assets/article_images/2018/event_bubble_example.jpg)
 
 ## 历史
 
