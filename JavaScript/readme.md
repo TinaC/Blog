@@ -4,20 +4,34 @@
 
 [Explain event delegation](https://github.com/TinaC/Blog/blob/master/JavaScript/event_delegation.md)
 
+Explain how prototypal inheritance works
+
 [Explain how `this` works in JavaScript](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
-
-[What is the difference between function declaration and function expression](https://github.com/TinaC/Blog/blob/master/JavaScript/function_declaration_vs_function_expression.md)
-
-[Explain "hoisting"](https://github.com/TinaC/Blog/blob/master/JavaScript/hoist.md)
-
-[What is a closure, and how/why would you use one?](https://github.com/TinaC/Blog/blob/master/JavaScript/scope_closure.md)
 
 [What's the difference between .call and .apply? (this)](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
 [Explain Function.prototype.bind (this)](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
+[What is a closure, and how/why would you use one?](https://github.com/TinaC/Blog/blob/master/JavaScript/scope_closure.md)
+
+[IIFE](https://github.com/TinaC/Blog/blob/master/JavaScript/IIFE.md)
+
+What's the difference between host objects and native objects?
+
+[What is the difference between function declaration and function expression](https://github.com/TinaC/Blog/blob/master/JavaScript/function_declaration_vs_function_expression.md)
+
+Difference between: function Person(){}, var person = Person(), and var person = new Person()?
+
+[Explain "hoisting"](https://github.com/TinaC/Blog/blob/master/JavaScript/hoist.md)
+
 [What's the difference between a variable that is: null, undefined or undeclared? (types)](https://github.com/TinaC/Blog/blob/master/JavaScript/types.md)
 
 What is the difference between == and ===? (type coercion)
 
-DOM API cheat sheet
+[DOM API cheat sheet](https://github.com/TinaC/Blog/blob/master/JavaScript/DOM_API.md)
+
+[Event Loop, Job Queue, setTimeout 0](https://github.com/TinaC/Blog/blob/master/JavaScript/event_loop.md)
+
+What are the pros and cons of using Promises instead of callbacks?
+
+Explain the same-origin policy with regards to JavaScript.
