@@ -140,6 +140,7 @@ div.innerHTML // Element.innerHTML: "<h1>Properties of the DOM <span>load</span>
 ## Node.textContent vs. HTMLElement.innerHTML
 
 innerHTML返回html
+
 textContent性能更好，也能避免xss attacks
 
 ## [Node.textContent vs. HTMLElement.innerText](https://stackoverflow.com/questions/35213147/difference-between-textcontent-vs-innertext)

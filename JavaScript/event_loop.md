@@ -1,22 +1,29 @@
 [Medium: JavaScript Event Loop Explained](https://medium.com/front-end-hacking/javascript-event-loop-explained-4cd26af121d4)
+
 [jsconf: What the heck is the event loop anyway?](https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html)
+
 [You Don't Know JS: Async & Performance](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch1.md)
 
 # Event Loop
 
 > event loop 没在ECMAScript标准里提到，而是在HTML标准： https://html.spec.whatwg.org/#event-loops
-ECMAScript标准写的是jobs(microtasks), 为了处理promise callbacks: http://ecma-international.org/ecma-262/6.0/#sec-jobs-and-job-queues
-虽然是在HTML标准里定义的，但是其他环境，比如Node也用
+> ECMAScript标准写的是jobs(microtasks), 为了处理promise callbacks: http://ecma-international.org/ecma-262/6.0/#sec-jobs-and-job-queues
+> 虽然是在HTML标准里定义的，但是其他环境，比如Node也用
 
 ## 单线程 & 异步
 
 JavaScript is a
+
 single threaded programming language,
+
 single threaded Runtime, it has a
+
 single call stack. And it can
+
 do one thing at a time,
-that's what a single thread means, the program can
-run one piece of code at a time.
+
+that's what a single thread means, the program can run one piece of code at a time.
+
 JS是单线程，即只有一个call stack, 在一个时间段只能运行一段代码。
 同时也是异步的(asynchronous)
 
@@ -25,14 +32,17 @@ JS是单线程，即只有一个call stack, 在一个时间段只能运行一段
 ![Architecture](/assets/article_images/2018/event_loop.png)
 
 Heap: 对象分配在堆上
+
 Stack: 即提供给JS代码运行的单线程，函数调用组成了栈帧(a stack of frames), 也叫过程活动记录(precedure activation record)
-Browser or Web APIs
-并不是JS语言(ECMAScript)的一部分
+
+Browser or Web APIs: 并不是JS语言(ECMAScript)的一部分
 
 ## Web API
 
 [Web API list](https://developer.mozilla.org/en-US/docs/Web/API)
+
 [setTimeout in Web API](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
+
 [Introduction to Web APIs
 ](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)
 
@@ -119,5 +129,29 @@ function runWhileLoopForNSeconds(sec){
 ```
 
 `while loop`是一个blocking statement: 执行发生在call stack中，并且不需要使用browser APIs, 所以它会blocks所有后面的statements直到它执行完，占住了JS的单线程
+在任务队列中生成一个long run task, 所以需要切分成小tasks放在队列中。
 
-# M
+
+# Job Queue
+
+JS中分为两种任务类型：macrotask宏任务和microtask微任务
+在ECMAScript中，macrotask可称为task, microtask称为jobs
+
+* macrotask(task)：主代码块，setTimeout，setInterval等
+* microtask(jobs)：在浏览器重新渲染UI**之前**执行, 避免了没必要的重绘。Promise callbacks，process.nextTick, DOM mutation changes
+
+event loop的原则：
+1. 一次执行一个task (单线程)
+2. task在执行中不会被其他task终端
+
+In a single iteration在单次迭代中, event loop先检查macrotask queue,
+
+如果有macrotask, 则执行一个task。如果没有, 直接去microtask queue.
+
+当一个macrotask执行完毕, 去microtask queue。
+
+这时event loop会执行完队列中**所有**的microtasks, 这是他们之间最大的区别。一次iteration中，最多只有一个macrotask会被执行，但是所有microtask queue中的microtasks都会被执行。
+
+![microtask](/assets/article_images/2018/microtask_queue.jpg)
+
+《Secrets of the JavaScript Ninja》
