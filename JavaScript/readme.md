@@ -8,6 +8,8 @@ Explain how prototypal inheritance works
 
 [Explain how `this` works in JavaScript](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
+[Implement `bind`](https://github.com/TinaC/Blog/blob/master/JavaScript/bind.md)
+
 [What's the difference between .call and .apply? (this)](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
 [Explain Function.prototype.bind (this)](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
