@@ -2,7 +2,7 @@
 
 [You-Dont-Know-JS this](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md#determining-this)
 
-https://stackoverflow.com/questions/40764184/unable-to-understand-prototype-in-bind-polyfill
+[stackoverflow: understand prototype in bind polyfill](https://stackoverflow.com/questions/40764184/unable-to-understand-prototype-in-bind-polyfill)
 
 ## 第1版
 
@@ -227,7 +227,11 @@ bindinstance instanceof test // true, test的.prototype会代替proxyTest1.proto
 但是使用我们的Polyfill返回的函数是有prototype的
 ```js
 proxyTest1.prototype // test {}
-(new proxyTest1()).__proto__.__proto__ = proxyTest1.prototype.__proto__ === (new test()).__proto__ === test.prototype // true
+
+(new proxyTest1()).__proto__.__proto__
+=== proxyTest1.prototype.__proto__
+=== (new test()).__proto__ === test.prototype // true
+
 // because
 fBound.prototype = new fNOP();
 proxyTest1.prototype = new test();
