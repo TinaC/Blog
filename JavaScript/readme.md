@@ -4,7 +4,7 @@
 
 [Explain event delegation](https://github.com/TinaC/Blog/blob/master/JavaScript/event_delegation.md)
 
-Explain how prototypal inheritance works
+[Explain how prototypal inheritance works](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
 [Explain how `this` works in JavaScript](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
