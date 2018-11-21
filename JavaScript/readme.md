@@ -37,3 +37,5 @@ What is the difference between == and ===? (type coercion)
 What are the pros and cons of using Promises instead of callbacks?
 
 Explain the same-origin policy with regards to JavaScript.
+
+[Enumerability and ownership of properties](https://github.com/TinaC/Blog/blob/master/JavaScript/properties_enumerability_ownership.md)
