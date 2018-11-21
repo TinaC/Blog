@@ -1,35 +1,43 @@
-[Enumerability and ownership of properties, 有table总结
-](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
-
 for..in
+
 in
 
 Object.prototype.propertyIsEnumerable()
+
 Object.prototype.hasOwnProperty()
 
+
 [Object.keys(), ES 5.1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+
 [Object.getOwnPropertyNames(), ES 5.1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
+
 [Object.getOwnPropertySymbols(), ES 6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
+
 [Object.getOwnPropertyDescriptors(), ES2017](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
 
 
-
 * 访问non-enumeration
+
 in, obj.hasOwnProperty, Object.getOwnPropertyNames, Object.getOwnPropertyDescriptors
 
 * 不访问non-enumeration
+
 for...in, obj.propertyIsEnumerable, Object.keys,
 
 * 访问原型链
+
 in, for...in,
 
 * 不访问原型链
+
 obj.hasOwnProperty, obj.propertyIsEnumerable, Object.keys, Object.getOwnPropertyNames, Object.getOwnPropertyDescriptors
 
 * 访问Symbol
+
 in, obj.hasOwnProperty, obj.propertyIsEnumerable, Object.getOwnPropertyDescriptors(ES2017)
 
 * 不访问Symbol
+
 for..in, Object.keys(ES 5.1), Object.getOwnPropertyNames(ES 5.1)
 
 ```js
@@ -82,3 +90,7 @@ for (var prop in myObject) {
 }
 // normal, protoProp
 ```
+
+## Reference
+[Enumerability and ownership of properties, 有table总结
+](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
