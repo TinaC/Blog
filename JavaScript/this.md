@@ -1,6 +1,6 @@
 # this的绑定规则
 
-* 1. 默认绑定
+## 1. 默认绑定
 
 非严格模式是window
 
@@ -8,7 +8,7 @@
 
 是否严格模式取决于函数的声明时
 
-* 2. 隐式绑定
+## 2. 隐式绑定
 
 使用对象上下文去引用函数时，可以说在这个函数被调用时，这个对象包含了这个函数引用，这时隐式绑定规则就认为这个对象应该作为该方法的`this` binding.
 
@@ -30,9 +30,9 @@ obj.foo(); // 2
 1. 把函数当参数传递时丢失绑定。因为是一个隐式的引用赋值。
 2. 函数回调丢失绑定: setTimeout, ajax callback
 
-* 3. 显示绑定
+## 3. 显示绑定
 
-* 3.1 hard binding: call() apply() bind()
+### 3.1 hard binding: call() apply() bind()
 
 > function.call(thisArg, arg1, arg2, ...)
 

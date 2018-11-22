@@ -4,7 +4,7 @@
 
 [Explain event delegation](https://github.com/TinaC/Blog/blob/master/JavaScript/event_delegation.md)
 
-Explain how prototypal inheritance works
+[Explain how prototypal inheritance works](https://github.com/TinaC/Blog/blob/master/JavaScript/prototype.md)
 
 [Explain how `this` works in JavaScript](https://github.com/TinaC/Blog/blob/master/JavaScript/this.md)
 
@@ -39,3 +39,6 @@ What are the pros and cons of using Promises instead of callbacks?
 Explain the same-origin policy with regards to JavaScript.
 
 [Enumerability and ownership of properties](https://github.com/TinaC/Blog/blob/master/JavaScript/properties_enumerability_ownership.md)
+
+Reference:
+[Front-end JavaScript Interviews in 2018–19](https://blog.webf.zone/front-end-javascript-interviews-in-2018-19-e17b0b10514)
