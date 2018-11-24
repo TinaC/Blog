@@ -84,7 +84,7 @@ because the prototype of the SubClass instance(`ninja1.__proto__`) will be an in
 
 `ninja.__proto__.__proto__.__proto__ === (Person.prototype).__proto__ === Object.prototype` 因为Person.prototype是一个Object
 
-![prototype](/assets/article_images/2018/prototype.png)
+![prototype](/assets/article_images/2018/prototype.jpg)
 
 还需要修复被override的constructor, 否则constructor就是Person了:
 
@@ -218,13 +218,13 @@ rect.move // f move
 tri.move // undefined, 无法访问Shape的原型方法
 ```
 
-![object_create](/assets/article_images/2018/object_create.png)
+![object_create](/assets/article_images/2018/object_create.jpg)
 
 * 使用Object.create()创建一个空对象
 
 > `Object.create(null)` creates an object that has an empty (aka, `null`) `[[Prototype]]` linkage, and thus the object can't delegate anywhere. Since such an object has no prototype chain, the `instanceof` operator has nothing to check, so it will always return `false`. These special empty-`[[Prototype]]` objects are often called "dictionaries"字典 as they are typically used purely for storing data in properties, mostly because they have no possible surprise effects from any delegated properties/functions on the `[[Prototype]]` chain, and are thus purely flat data storage.
 
-![object_create_null](/assets/article_images/2018/object_create_null.png)
+![object_create_null](/assets/article_images/2018/object_create_null.jpg)
 
 ```js
 ocn = Object.create( null );
