@@ -1,6 +1,6 @@
-# Equlity
+# Equality
 
-## [==: The Abstract Equlity Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
+## [==: The Abstract Equality Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
 
 如果Type相等，则返回 === 的运算结果。如果type不相等，则执行coerce再比较
 

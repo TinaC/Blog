@@ -28,7 +28,7 @@ Difference between: function Person(){}, var person = Person(), and var person =
 
 [What's the difference between a variable that is: null, undefined or undeclared? (types)](https://github.com/TinaC/Blog/blob/master/JavaScript/types.md)
 
-[What is the difference between == and ===?](https://github.com/TinaC/Blog/blob/master/JavaScript/equlity.md)
+[What is the difference between == and ===?](https://github.com/TinaC/Blog/blob/master/JavaScript/equality.md)
 
 [DOM API cheat sheet](https://github.com/TinaC/Blog/blob/master/JavaScript/DOM_API.md)
 
