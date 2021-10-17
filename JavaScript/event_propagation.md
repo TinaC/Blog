@@ -34,16 +34,22 @@ target element在**冒泡/捕获过程**不会变化, 始终是子元素，但�
 
 对于 form -> div -> p 的层级结构, [Code](https://github.com/TinaC/FE_Notes/blob/master/js/event/propagation.html)，
 如果点击最内层的p, 事件的响应顺序(冒泡)以及属性：
+```
 p onclick: event.target = P, this = P, event.currentTarget = P
 div onclick: event.target = P, this = DIV, event.currentTarget = DIV
 form onclick: event.target = P, this = FORM, event.currentTarget = FORM
+```
 
 点击div:
+```
 div onclick: event.target = DIV, this = DIV, event.currentTarget = DIV
 form onclick: event.target = DIV, this = FORM, event.currentTarget = FORM
+```
 
 点击Form:
+```
 form onclick: event.target = FORM, this = FORM, event.currentTarget = FORM
+```
 
 ## event.stopPropagation()
 
